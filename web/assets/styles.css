@@ -1,23 +1,23 @@
 :root {
-    --color-bg-main: linear-gradient(90deg, #000328, #00458E);
-    --color-bg-card: rgba(15, 23, 42, 0.5);
-    --color-bg-input: rgba(2, 6, 23, 0.5);
-    --color-bg-toast: #0f172a;
-    --color-bg-toast-header: rgba(30, 41, 59, 0.5);
+    --color-bg-main: radial-gradient(circle at 12% 15%, #064e3b38 0%, transparent 45%), radial-gradient(circle at 88% 85%, #0284c728 0%, transparent 45%), #030712;
+    --color-bg-card: rgba(8, 20, 24, 0.85);
+    --color-bg-input: rgba(2, 8, 12, 0.9);
+    --color-bg-toast: #051a14;
+    --color-bg-toast-header: rgba(6, 78, 59, 0.5);
 
-    --color-border-ui: #334155;
+    --color-border-ui: rgba(16, 185, 129, 0.22);
 
-    --color-text-primary: #f1f5f9;
-    --color-text-secondary: #94a3b8;
-    --color-text-muted: #64748b;
+    --color-text-primary: #f8fafc;
+    --color-text-secondary: #a7f3d0;
+    --color-text-muted: #6ee7b7;
 
-    --color-brand-primary: #3b82f6;
-    --color-brand-hover: #60a5fa;
+    --color-brand-primary: #10b981;
+    --color-brand-hover: #34d399;
 
-    --color-info: #60a5fa;
-    --color-success: #4ade80;
-    --color-failure: #dc2626;
-    --color-terminal-text: #93c5fd;
+    --color-info: #38bdf8;
+    --color-success: #10b981;
+    --color-failure: #ef4444;
+    --color-terminal-text: #a7f3d0;
 
     --radius-card: 1.5rem;
     --radius-ui: 0.75rem;
@@ -37,11 +37,11 @@
     --line-height-sm: 1.25rem;
     --line-height-lg: 2rem;
 
-    --shadow-icon: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 20px 40px -15px rgba(0, 3, 40, 0.5), 0 35px 60px -15px rgba(0, 69, 142, 0.3);
-    --shadow-terminal: 0 4px 12px rgba(0, 0, 0, 0.4), 0 16px 32px -8px rgba(0, 3, 40, 0.6);
-    --shadow-input: inset 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(255, 255, 255, 0.05);
-    --shadow-input-focus: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 8px 20px -4px rgba(59, 130, 246, 0.3);
+    --shadow-icon: drop-shadow(0 4px 6px rgba(16, 185, 129, 0.2));
+    --shadow-card: 0 8px 32px -4px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(16, 185, 129, 0.15);
+    --shadow-terminal: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(16, 185, 129, 0.08);
+    --shadow-input: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(16, 185, 129, 0.1);
+    --shadow-input-focus: 0 0 0 3px rgba(16, 185, 129, 0.4), 0 8px 20px -4px rgba(16, 185, 129, 0.3);
 
     --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
