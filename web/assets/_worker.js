@@ -81972,67 +81972,38 @@ function createStreamLogger() {
 
 // web/src/html.ts
 var WIZARD_HTML = `<!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SELOOM Wizard \u{1F1EE}\u{1F1F6} | 1-Click Deployer</title>
+    <title>SELOOM Deployer \u{1F1EE}\u{1F1F6} | \u0645\u0646\u0635\u0629 \u062A\u062B\u0628\u064A\u062A \u0648\u0646\u0634\u0631 \u062E\u0648\u0627\u062F\u0645 \u0633\u0644\u0648\u0645</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Tajawal:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=alt_route,check_circle,cloud_upload,content_copy,key,keyboard_arrow_down,open_in_new,visibility,visibility_off,bolt" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=alt_route,check_circle,cloud_upload,content_copy,key,keyboard_arrow_down,open_in_new,visibility,visibility_off,bolt,send,shield,download,verified,terminal,rocket_launch" />
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
 :root {
-    --color-bg-main: radial-gradient(circle at 12% 15%, #064e3b38 0%, transparent 45%), radial-gradient(circle at 88% 85%, #0284c728 0%, transparent 45%), #030712;
-    --color-bg-card: rgba(8, 20, 24, 0.85);
-    --color-bg-input: rgba(2, 8, 12, 0.9);
-    --color-bg-toast: #051a14;
-    --color-bg-toast-header: rgba(6, 78, 59, 0.5);
-
-    --color-border-ui: rgba(16, 185, 129, 0.22);
-
-    --color-text-primary: #f8fafc;
-    --color-text-secondary: #a7f3d0;
-    --color-text-muted: #6ee7b7;
-
-    --color-brand-primary: #10b981;
-    --color-brand-hover: #34d399;
-
-    --color-info: #38bdf8;
-    --color-success: #10b981;
-    --color-failure: #ef4444;
-    --color-terminal-text: #a7f3d0;
-
-    --radius-card: 1.5rem;
-    --radius-ui: 0.75rem;
-
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 0.85rem;
-    --space-lg: 1rem;
-    --space-xl: 2rem;
-
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.95rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.5rem;
-
-    --line-height-xs: 1rem;
-    --line-height-sm: 1.25rem;
-    --line-height-lg: 2rem;
-
-    --shadow-icon: drop-shadow(0 4px 6px rgba(16, 185, 129, 0.2));
-    --shadow-card: 0 8px 32px -4px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(16, 185, 129, 0.15);
-    --shadow-terminal: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(16, 185, 129, 0.08);
-    --shadow-input: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(16, 185, 129, 0.1);
-    --shadow-input-focus: 0 0 0 3px rgba(16, 185, 129, 0.4), 0 8px 20px -4px rgba(16, 185, 129, 0.3);
-
-    --transition-standard: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-dark: #070814;
+    --card-bg: rgba(13, 16, 35, 0.82);
+    --input-bg: rgba(6, 8, 20, 0.9);
+    --border-subtle: rgba(99, 102, 241, 0.25);
+    --border-glow: rgba(0, 240, 255, 0.45);
+    
+    --primary-cyan: #00f0ff;
+    --primary-indigo: #6366f1;
+    --primary-purple: #a855f7;
+    --accent-emerald: #10b981;
+    --text-pure: #ffffff;
+    --text-muted: #94a3b8;
+    --text-glow: #e0e7ff;
+    
+    --radius-main: 1.5rem;
+    --radius-sub: 0.85rem;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -82042,487 +82013,725 @@ var WIZARD_HTML = `<!doctype html>
 }
 
 body {
-    font-family: "Ubuntu", system-ui, -apple-system, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: var(--color-bg-main);
-}
-
-h4 {
-    font-weight: 500;
-}
-
-a {
-    color: var(--color-brand-primary);
-    text-decoration-line: unset;
-}
-
-a:hover {
-    color: var(--color-brand-hover);
-}
-
-ol {
-    list-style-position: inside;
-    text-align: left;
-    font-size: smaller;
-    line-height: 2;
-}
-
-.flex-center,
-.toast-close-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.absolute-y-center,
-.input-icon,
-.input-after-icon {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container {
+    font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(0, 240, 255, 0.12) 0%, transparent 45%),
+        linear-gradient(180deg, #070814 0%, #0c0f24 100%);
+    color: var(--text-pure);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-lg);
-    color: var(--color-text-primary);
+    position: relative;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-.card {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-bg-card);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: none;
-    border-radius: var(--radius-card);
-    padding: var(--space-xl);
-    box-shadow: var(--shadow-card);
+/* Ambient glow balls */
+.bg-glow {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    pointer-events: none;
+    z-index: 0;
+}
+.bg-glow.top-left {
+    top: -100px;
+    right: -100px;
+    background: rgba(99, 102, 241, 0.25);
+}
+.bg-glow.bottom-right {
+    bottom: -120px;
+    left: -100px;
+    background: rgba(0, 240, 255, 0.18);
 }
 
-.card-header-area {
+.main-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+}
+
+/* Top bar with social & developer links */
+.top-bar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 12px 20px;
+    background: rgba(16, 20, 44, 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-main);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.brand-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    color: var(--primary-cyan);
+}
+.iraq-flag-icon {
+    font-size: 1.4rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+.social-pill span.material-symbols-rounded {
+    font-size: 1.1rem;
+}
+
+.social-pill.tg-channel {
+    background: rgba(0, 136, 204, 0.2);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+}
+.social-pill.tg-channel:hover {
+    background: #0088cc;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(0, 136, 204, 0.6);
+}
+
+.social-pill.tg-user {
+    background: rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+}
+.social-pill.tg-user:hover {
+    background: #8b5cf6;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+}
+
+.social-pill.iq-app {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.4);
+}
+.social-pill.iq-app:hover {
+    background: #10b981;
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.6);
+}
+
+/* Deploy Card */
+.deploy-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(28px);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-main);
+    padding: 36px 30px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.12);
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    background: rgba(99, 102, 241, 0.18);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 50px;
+    color: #c7d2fe;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--text-pure);
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, #00f0ff 0%, #6366f1 50%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Step Grid */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.step-box {
+    background: rgba(18, 22, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sub);
+    padding: 16px;
+    position: relative;
+    transition: var(--transition);
+}
+.step-box:hover {
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.step-box.highlight-step {
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.step-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    color: var(--primary-cyan);
+    font-weight: 900;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-xl);
+    font-size: 0.9rem;
+}
+
+.step-content h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #e0e7ff;
+}
+
+.step-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.step-content a {
+    color: var(--primary-cyan);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.token-direct-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, #00f0ff 0%, #0284c7 100%);
+    color: #04101e !important;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 240, 255, 0.35);
+    transition: var(--transition);
+}
+.token-direct-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 240, 255, 0.6);
+}
+
+.welcome-user-banner {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+    color: #6ee7b7;
+    padding: 12px 18px;
+    border-radius: var(--radius-sub);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.card-header-group {
-    display: flex;
-    gap: var(--space-md);
-    margin-bottom: var(--space-sm);
-}
-
-.header {
-    font-size: var(--font-size-lg);
-    line-height: var(--line-height-lg);
-    font-weight: 700;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
-}
-
-.icon {
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    filter: var(--shadow-icon);
-}
-
-.subtitle {
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-xl);
-}
-
-.form {
+/* Deploy Form */
+.deploy-form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
-.input-group {
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e0e7ff;
+}
+
+.input-box {
     position: relative;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    width: 100%;
 }
 
-.input-field,
-.form-select {
-    width: 100%;
-    line-height: var(--line-height-sm);
-    display: flex;
-    background-color: var(--color-bg-input);
-    border: none;
-    border-radius: var(--radius-ui);
-    padding: var(--space-md) var(--space-xl) var(--space-md) 3rem;
-    outline: none;
-    color: var(--color-text-primary);
-    font-size: var(--font-size-base);
-    font-family: inherit;
-    box-shadow: var(--shadow-input);
-    transition: var(--transition-standard);
-}
-
-.form-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.input-field::placeholder {
-    color: var(--color-text-muted);
-}
-
-.input-field:focus,
-.form-select:focus {
-    box-shadow: var(--shadow-input-focus);
-}
-
-.input-icon {
-    left: var(--space-md);
-    color: var(--color-text-muted);
-    transition: var(--transition-standard);
+.field-icon {
+    position: absolute;
+    right: 14px;
+    color: var(--primary-cyan);
     pointer-events: none;
 }
 
-.input-group:focus-within .input-icon {
-    color: var(--color-brand-hover);
+.dropdown-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+    pointer-events: none;
 }
 
-.input-after-icon {
-    right: var(--space-md);
-    background: transparent;
+.text-input, .select-input {
+    width: 100%;
+    padding: 14px 46px 14px 16px;
+    background: var(--input-bg);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: var(--radius-sub);
+    color: var(--text-pure);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.text-input:focus, .select-input:focus {
+    outline: none;
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.toggle-eye-btn {
+    position: absolute;
+    left: 14px;
+    background: none;
     border: none;
-    color: var(--color-text-secondary);
+    color: var(--text-muted);
     cursor: pointer;
-    transition: var(--transition-standard);
-    padding: 0;
-}
-
-.input-after-icon:hover {
-    color: #e2e8f0;
-}
-
-.btn-primary {
-    background-color: transparent;
-    border: 2px solid var(--color-brand-primary);
-    color: var(--color-brand-primary);
-    width: max-content;
-    padding: 15px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    transition: var(--transition);
+}
+.toggle-eye-btn:hover {
+    color: var(--primary-cyan);
+}
+
+.submit-deploy-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    border-radius: var(--radius-ui);
-    cursor: pointer;
-    margin: 0 auto;
-    font-weight: 600;
-    font-size: var(--font-size-base);
-    transition: var(--transition-standard);
-    outline: none;
-}
-
-.btn-primary:hover {
-    background: var(--color-bg-main);
-    border-color: var(--color-text-secondary);
-    color: var(--color-text-primary);
-}
-
-.btn-primary:active {
-    transform: scale(0.97);
-    opacity: 0.9;
-}
-
-.btn-secondary {
+    gap: 10px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #00f0ff 0%, #6366f1 50%, #8b5cf6 100%);
     border: none;
-    background-color: transparent;
-    color: var(--color-brand-primary);
-    display: flex;
-    flex-direction: row;
+    border-radius: var(--radius-sub);
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 800;
     cursor: pointer;
-    outline: none;
-    transition: all 0.2s ease;
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+    transition: var(--transition);
+}
+.submit-deploy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(0, 240, 255, 0.5);
 }
 
-.btn-secondary:hover {
-    color: var(--color-brand-hover);
-    scale: 1.1;
-}
-
-.btn-secondary:active {
-    transform: scale(0.97);
-    opacity: 0.9;
-}
-
-.terminal {
-    background-color: rgba(0, 0, 0, 0.4);
-    border: none;
-    color: var(--color-terminal-text);
-    border-radius: var(--radius-ui);
-    padding: var(--space-lg);
-    margin-top: var(--space-xl);
-    font-size: var(--font-size-sm);
-    line-height: var(--line-height-sm);
-    font-family: "Ubuntu Mono", ui-monospace, Consolas, monospace;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-break: break-all;
-    display: block;
-    box-shadow: var(--shadow-terminal);
-}
-
-.terminal-info {
-    color: var(--color-info);
-    font-weight: bold;
-}
-
-.terminal-success {
-    color: var(--color-success);
-    font-weight: bold;
-}
-
-.terminal-error {
-    color: var(--color-failure);
-    font-weight: bold;
-}
-
-.terminal-url {
-    color: var(--color-brand-primary);
-    font-weight: bold;
-}
-
-.toast-card {
-    width: 100%;
-    box-sizing: border-box;
+/* Alert Cards / Toasts */
+.alert-card {
+    border-radius: var(--radius-sub);
+    padding: 18px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-bg-toast);
-    border: 1px solid var(--color-border-ui);
-    border-radius: var(--radius-ui);
-    box-shadow: var(--shadow-card);
-    overflow: hidden;
-    transition: var(--transition-standard);
+    gap: 10px;
 }
-
-.toast-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-md) var(--space-lg);
-    background-color: var(--color-bg-toast-header);
-    border-bottom: 1px solid var(--color-border-ui);
-}
-
-.toast-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-sm);
-    font-weight: 500;
-    color: var(--color-text-primary);
-    font-size: var(--font-size-sm);
-}
-
-.toast-success-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: flex;
-    color: var(--color-success);
-}
-
-.toast-close-btn {
-    background: transparent;
-    border: none;
-    color: var(--color-text-secondary);
-    cursor: pointer;
-    font-size: var(--font-size-base);
-    transition: all 0.2s ease;
-}
-
-.toast-close-btn:hover {
-    color: var(--color-text-primary);
-    scale: 1.1;
-}
-
-.toast-body {
-    padding: var(--space-lg);
-    font-size: var(--font-size-sm);
-    color: #cbd5e1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-xs);
-}
-
-.toast-link {
-    color: var(--color-brand-primary);
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    transition: all 0.2s ease;
-}
-
-.toast-link:hover {
-    color: var(--color-brand-hover);
-    scale: 1.1;
-}
-
-.toast-link:active {
-    transform: scale(0.97);
-    opacity: 0.9;
-}
-
-.hidden {
+.alert-card.hidden {
     display: none;
 }
+
+.toast-private {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.5);
+}
+
+.toast-success {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+}
+
+.alert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alert-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+.toast-success .alert-title {
+    color: #6ee7b7;
+}
+.toast-private .alert-title {
+    color: #a5b4fc;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.alert-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.copy-pill-btn, .open-panel-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+.copy-pill-btn {
+    background: rgba(99, 102, 241, 0.3);
+    color: #ffffff;
+    border: 1px solid #6366f1;
+}
+.open-panel-btn {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+.open-panel-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* Terminal Console */
+.terminal-wrapper {
+    background: #04050d;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sub);
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-bar {
+    background: #0d1024;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.term-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.term-dot.red { background: #ef4444; }
+.term-dot.yellow { background: #f59e0b; }
+.term-dot.green { background: #10b981; }
+
+.term-title {
+    margin-right: auto;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.term-title span {
+    font-size: 1rem;
+}
+
+.terminal-screen {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    padding: 16px;
+    color: #00f0ff;
+    min-height: 110px;
+    max-height: 240px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+.terminal-info { color: #38bdf8; font-weight: 700; }
+.terminal-error { color: #f87171; font-weight: 700; }
+.terminal-success { color: #34d399; font-weight: 700; }
+.terminal-url { color: #fde047; text-decoration: underline; }
+
+/* Card Footer */
+.card-footer {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
+
+.footer-iraq-banner {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-glow);
+}
+
+.footer-sub-links {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.footer-sub-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+.footer-sub-links a:hover {
+    color: var(--primary-cyan);
+}
+.dot-sep {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-title {
+        font-size: 1.6rem;
+    }
+    .deploy-card {
+        padding: 24px 16px;
+    }
+}
+
 </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header-area">
-                <div class="card-header-group">
-                    <h3 class="header">
-                        <span class="material-symbols-rounded" style="color: #38bdf8; font-size: 2rem;">bolt</span>
-                        SELOOM Wizard
-                    </h3>
-                    <a href="https://github.com/Seloom1/SELOOM-Wizard" target="_blank" title="GitHub Repository">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"
-                                fill="white">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </span>
-                    </a>
+    <div class="bg-glow top-left"></div>
+    <div class="bg-glow bottom-right"></div>
+
+    <div class="main-wrapper">
+        <!-- Top Navigation / Social Bar -->
+        <header class="top-bar">
+            <div class="brand-badge">
+                <span class="iraq-flag-icon">\u{1F1EE}\u{1F1F6}</span>
+                <span class="brand-text">SELOOM TECH</span>
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/freevpsiraq" target="_blank" class="social-pill tg-channel" title="\u0642\u0646\u0627\u0629 \u0627\u0644\u062A\u0644\u062C\u0631\u0627\u0645">
+                    <span class="material-symbols-rounded">send</span>
+                    <span>\u0642\u0646\u0627\u0629 \u0627\u0644\u062A\u0644\u062C\u0631\u0627\u0645: @freevpsiraq</span>
+                </a>
+                <a href="https://t.me/seloom1" target="_blank" class="social-pill tg-user" title="\u0645\u0639\u0631\u0641 \u0627\u0644\u062A\u0644\u062C\u0631\u0627\u0645">
+                    <span class="material-symbols-rounded">verified</span>
+                    <span>\u0627\u0644\u0645\u0637\u0648\u0631: @seloom1</span>
+                </a>
+                <a href="https://t.me/freevpsiraq/210" target="_blank" class="social-pill iq-app" title="\u062A\u062D\u0645\u064A\u0644 \u062A\u0637\u0628\u064A\u0642 IQ Tunnel">
+                    <span class="material-symbols-rounded">download</span>
+                    <span>\u062A\u0637\u0628\u064A\u0642 IQ Tunnel</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Deployment Card -->
+        <main class="deploy-card">
+            <div class="hero-section">
+                <div class="hero-badge">
+                    <span class="material-symbols-rounded">rocket_launch</span>
+                    <span>\u0646\u0638\u0627\u0645 \u0627\u0644\u0646\u0634\u0631 \u0627\u0644\u0633\u062D\u0627\u0628\u064A \u0627\u0644\u062A\u0644\u0642\u0627\u0626\u064A 2026</span>
                 </div>
-                <p class="subtitle" style="color: #38bdf8; font-weight: 600;">\u26A1 \u062A\u062B\u0628\u064A\u062A \u0648\u0646\u0634\u0631 \u0644\u0648\u062D\u0629 \u0633\u0644\u0648\u0645 \u0641\u064A \u062D\u0633\u0627\u0628\u0643 \u0628\u0646\u0642\u0631\u0629 \u0648\u0627\u062D\u062F\u0629 \u{1F1EE}\u{1F1F6} \u26A1</p>
-                <h4 id="user" style="display: none;"></h4>
-                <ol id="steps">
-                    <li>
-                        <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">\u0633\u062C\u0644 \u062F\u062E\u0648\u0644</a> \u0625\u0644\u0649 \u062D\u0633\u0627\u0628 \u0643\u0644\u0627\u0648\u062F\u0641\u0644\u064A\u0631 \u0645\u062C\u0627\u0646\u0627\u064B.
-                    </li>
-                    <li>
-                        \u0627\u0636\u063A\u0637 \u0639\u0644\u0649 <a id="tokenTemplate" href="" target="_blank" rel="noopener noreferrer"><b>\u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062A\u0648\u0643\u0646 (Create Token)</b></a>\u060C \u062B\u0645 \u0627\u0636\u063A\u0637 <b>Continue to summary</b> \u062B\u0645 <b>Create Token</b> \u0648\u0627\u0646\u0633\u062E \u0627\u0644\u0631\u0645\u0632.
-                    </li>
-                    <li>\u0627\u0644\u0635\u0642 \u0627\u0644\u062A\u0648\u0643\u0646 \u0623\u062F\u0646\u0627\u0647\u060C \u0627\u062E\u062A\u0631 <b>Cloudflare Pages</b> \u0648\u0627\u0636\u063A\u0637 <b>Install</b>.</li>
-                    <li>\u0633\u062A\u062D\u0635\u0644 \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0644\u0649 \u0631\u0627\u0628\u0637 \u0644\u0648\u062D\u062A\u0643 \u0627\u0644\u062E\u0627\u0635\u0629 <b>SELOOM Panel</b> \u0648\u0645\u0639\u0644\u0648\u0645\u0627\u062A \u0627\u0644\u062F\u062E\u0648\u0644!</li>
-                </ol>
+                <h1 class="main-title">
+                    \u0645\u062B\u0628\u062A \u0644\u0648\u062D\u0627\u062A \u0633\u0644\u0648\u0645 <span class="highlight-text">SELOOM</span> \u{1F1EE}\u{1F1F6}
+                </h1>
+                <p class="hero-subtitle">
+                    \u0646\u0638\u0627\u0645 \u0645\u062A\u0637\u0648\u0631 \u0644\u0646\u0634\u0631 \u0644\u0648\u062D\u0627\u062A \u0627\u0644\u0628\u0631\u0648\u0643\u0633\u064A \u0648\u0627\u0644\u0627\u0634\u062A\u0631\u0627\u0643\u0627\u062A \u0627\u0644\u0633\u0631\u064A\u0639\u0629 \u0639\u0644\u0649 \u0643\u0644\u0627\u0648\u062F\u0641\u0644\u064A\u0631 \u0645\u062C\u0627\u0646\u0627\u064B \u0628\u0646\u0642\u0631\u0629 \u0648\u0627\u062D\u062F\u0629 \u0645\u0639 5 \u0628\u0627\u0642\u0627\u062A \u0645\u062C\u0647\u0632\u0629 \u0644\u0634\u0628\u0643\u0627\u062A \u0627\u0644\u0639\u0631\u0627\u0642 (\u0632\u064A\u0646\u060C \u0623\u0648\u062F\u064A\u060C \u0648\u0622\u0633\u064A\u0627 \u0633\u064A\u0644).
+                </p>
             </div>
 
-            <form id="deployForm" class="form">
-                <div id="apiTokenGroup" class="input-group">
-                    <span class="input-icon">
-                        <span class="material-symbols-rounded">
-                            key
-                        </span>
-                    </span>
-                    <input id="apiToken" name="apiToken" type="password" class="input-field"
-                        placeholder="Cloudflare API Token" required />
-                    <button id="togglePassword" type="button" class="input-after-icon">
-                        <span id="eyeIcon" class="material-symbols-rounded">
-                            visibility
-                        </span>
-                        <span id="eyeOffIcon" class="material-symbols-rounded hidden">
-                            visibility_off
-                        </span>
-                    </button>
-                </div>
-
-                <div class="input-group">
-                    <span class="material-symbols-rounded input-icon">
-                        alt_route
-                    </span>
-                    <select id="deployType" name="deployType" class="form-select">
-                        <option value="pages" selected>Cloudflare Pages (\u0645\u0648\u0635\u0649 \u0628\u0647 - \u0641\u0627\u0626\u0642 \u0627\u0644\u0633\u0631\u0639\u0629)</option>
-                        <option value="workers">Cloudflare Workers</option>
-                    </select>
-                    <span class="material-symbols-rounded input-after-icon">
-                        keyboard_arrow_down
-                    </span>
-                </div>
-
-                <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #0284c7, #0369a1); font-weight: 700;">
-                    <span class="material-symbols-rounded">
-                        cloud_upload
-                    </span>
-                    Install SELOOM Panel
-                </button>
-
-                <div id="privateUrlToast" class="toast-card hidden">
-                    <div class="toast-header">
-                        <div class="toast-title">
-                            <span class="material-symbols-rounded toast-success-icon">
-                                check_circle
-                            </span>
-                            SELOOM Wizard Private Link
-                        </div>
-                        <button id="closePrivateUrlToast" class="toast-close-btn">
-                            \u2715
-                        </button>
-                    </div>
-                    <div class="toast-body">
-                        \u0631\u0627\u0628\u0637\u0643 \u0627\u0644\u062E\u0627\u0635 \u0644\u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u062A\u062B\u0628\u064A\u062A \u0623\u0648 \u0627\u0644\u062A\u062D\u062F\u064A\u062B \u0628\u0646\u0642\u0631\u0629 \u0648\u0627\u062D\u062F\u0629:
-                        <button id="copyURL" type="button" class="btn-secondary">
-                            <span class="material-symbols-rounded">
-                                content_copy
-                            </span>
-                        </button>
+            <!-- Steps Progress Cards -->
+            <div id="steps" class="steps-grid">
+                <div class="step-box">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>\u062D\u0633\u0627\u0628 \u0643\u0644\u0627\u0648\u062F\u0641\u0644\u064A\u0631</h4>
+                        <p>\u0627\u0641\u062A\u062D <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">\u062D\u0633\u0627\u0628\u0643 \u0627\u0644\u0645\u062C\u0627\u0646\u064A</a> \u0641\u064A Cloudflare \u0625\u0630\u0627 \u0644\u0645 \u064A\u0643\u0646 \u0644\u062F\u064A\u0643 \u062D\u0633\u0627\u0628.</p>
                     </div>
                 </div>
-
-                <div id="deploymentToast" class="toast-card hidden">
-                    <div class="toast-header">
-                        <div class="toast-title">
-                            <span class="material-symbols-rounded toast-success-icon">
-                                check_circle
-                            </span>
-                            \u062A\u0645 \u0627\u0644\u062A\u062B\u0628\u064A\u062A \u0648\u0627\u0644\u0646\u0634\u0631 \u0628\u0646\u062C\u0627\u062D! \u{1F1EE}\u{1F1F6}
-                        </div>
-                        <button id="closeDeploymentToast" class="toast-close-btn">
-                            \u2715
-                        </button>
-                    </div>
-                    <div class="toast-body">
-                        \u0627\u0641\u062A\u062D \u0644\u0648\u062D\u0629 \u062A\u062D\u0643\u0645\u0643 \u0627\u0644\u062E\u0627\u0635\u0629 \u0627\u0644\u0622\u0646:
-                        <a id="liveUrl" href="#" target="_blank" class="toast-link" style="color: #38bdf8; font-weight: 700;">
-                            <span class="material-symbols-rounded">
-                                open_in_new
-                            </span>
-                            \u062F\u062E\u0648\u0644 \u0625\u0644\u0649 SELOOM Panel
+                <div class="step-box highlight-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>\u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062A\u0648\u0643\u0646</h4>
+                        <p>\u0627\u0636\u063A\u0637 \u0627\u0644\u0632\u0631 \u0623\u062F\u0646\u0627\u0647 \u0644\u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062A\u0648\u0643\u0646 \u0628\u0627\u0644\u0635\u0644\u0627\u062D\u064A\u0627\u062A \u0627\u0644\u062C\u0627\u0647\u0632\u0629 \u062A\u0644\u0642\u0627\u0626\u064A\u0627\u064B \u062B\u0645 \u0627\u0636\u063A\u0637 <b>Create Token</b> \u0648\u0627\u0646\u0633\u062E \u0627\u0644\u0631\u0645\u0632.</p>
+                        <a id="tokenTemplate" href="" target="_blank" rel="noopener noreferrer" class="token-direct-btn">
+                            <span class="material-symbols-rounded">key</span>
+                            <span>\u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062A\u0648\u0643\u0646 \u0628\u0646\u0642\u0631\u0629 \u0648\u0627\u062D\u062F\u0629 \u26A1</span>
                         </a>
                     </div>
                 </div>
+                <div class="step-box">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>\u0627\u0644\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0641\u0648\u0631\u064A</h4>
+                        <p>\u0627\u0644\u0635\u0642 \u0631\u0645\u0632 \u0627\u0644\u062A\u0648\u0643\u0646 \u0648\u0627\u0636\u063A\u0637 <b>\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0644\u0648\u062D\u0629</b> \u0648\u0633\u062A\u0633\u062A\u0644\u0645 \u0644\u0648\u062D\u062A\u0643 \u0648\u0627\u0634\u062A\u0631\u0627\u0643\u0627\u062A\u0643 \u0641\u0648\u0631\u0627\u064B!</p>
+                    </div>
+                </div>
+            </div>
 
+            <h4 id="user" class="welcome-user-banner" style="display: none;"></h4>
+
+            <!-- Form -->
+            <form id="deployForm" class="deploy-form">
+                <div id="apiTokenGroup" class="input-container">
+                    <label class="input-label">\u0631\u0645\u0632 \u0627\u0644\u062A\u0648\u0643\u0646 \u0627\u0644\u0633\u062D\u0627\u0628\u064A (Cloudflare API Token)</label>
+                    <div class="input-box">
+                        <span class="material-symbols-rounded field-icon">key</span>
+                        <input id="apiToken" name="apiToken" type="password" class="text-input"
+                            placeholder="\u0627\u0644\u0635\u0642 \u0627\u0644\u062A\u0648\u0643\u0646 \u0647\u0646\u0627 (\u064A\u0628\u062F\u0623 \u0628\u0640 ...)" required dir="ltr" />
+                        <button id="togglePassword" type="button" class="toggle-eye-btn">
+                            <span id="eyeIcon" class="material-symbols-rounded">visibility</span>
+                            <span id="eyeOffIcon" class="material-symbols-rounded hidden">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label class="input-label">\u0646\u0648\u0639 \u0627\u0644\u0627\u0633\u062A\u0636\u0627\u0641\u0629 (Deployment Target)</label>
+                    <div class="input-box">
+                        <span class="material-symbols-rounded field-icon">alt_route</span>
+                        <select id="deployType" name="deployType" class="select-input">
+                            <option value="pages" selected>Cloudflare Pages (\u0645\u0648\u0635\u0649 \u0628\u0647 \u0644\u0634\u0628\u0643\u0627\u062A \u0627\u0644\u0639\u0631\u0627\u0642 - \u0628\u062F\u0648\u0646 \u062D\u0638\u0631 \u26A1)</option>
+                            <option value="workers">Cloudflare Workers</option>
+                        </select>
+                        <span class="material-symbols-rounded dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-deploy-btn">
+                    <span class="material-symbols-rounded">cloud_upload</span>
+                    <span>\u0628\u062F\u0621 \u062A\u062B\u0628\u064A\u062A \u0648\u0646\u0634\u0631 \u0644\u0648\u062D\u0629 \u0633\u0644\u0648\u0645 \u0627\u0644\u0622\u0646 \u{1F680}</span>
+                </button>
+
+                <!-- Private URL Toast -->
+                <div id="privateUrlToast" class="alert-card toast-private hidden">
+                    <div class="alert-header">
+                        <div class="alert-title">
+                            <span class="material-symbols-rounded">shield</span>
+                            \u0631\u0627\u0628\u0637\u0643 \u0627\u0644\u062E\u0627\u0635 \u0644\u0644\u0625\u062F\u0627\u0631\u0629 \u0627\u0644\u0633\u0631\u064A\u0639\u0629
+                        </div>
+                        <button id="closePrivateUrlToast" class="alert-close">\u2715</button>
+                    </div>
+                    <div class="alert-body">
+                        <span>\u0627\u062D\u062A\u0641\u0638 \u0628\u0631\u0627\u0628\u0637\u0643 \u0627\u0644\u062E\u0627\u0635 \u0644\u0625\u0639\u0627\u062F\u0629 \u0627\u0644\u062A\u062B\u0628\u064A\u062A \u0623\u0648 \u0627\u0644\u062A\u062D\u062F\u064A\u062B \u0628\u0636\u063A\u0637\u0629 \u0632\u0631:</span>
+                        <button id="copyURL" type="button" class="copy-pill-btn">
+                            <span class="material-symbols-rounded">content_copy</span>
+                            <span>\u0646\u0633\u062E \u0627\u0644\u0631\u0627\u0628\u0637 \u0627\u0644\u062E\u0627\u0635</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Deployment Success Toast -->
+                <div id="deploymentToast" class="alert-card toast-success hidden">
+                    <div class="alert-header">
+                        <div class="alert-title">
+                            <span class="material-symbols-rounded">check_circle</span>
+                            \u062A\u0645 \u0646\u0634\u0631 \u0627\u0644\u0644\u0648\u062D\u0629 \u0628\u0646\u062C\u0627\u062D \u0645\u0628\u0631\u0648\u0643! \u{1F1EE}\u{1F1F6}
+                        </div>
+                        <button id="closeDeploymentToast" class="alert-close">\u2715</button>
+                    </div>
+                    <div class="alert-body">
+                        <p>\u062A\u0645 \u062A\u062B\u0628\u064A\u062A \u0648\u062A\u0641\u0639\u064A\u0644 \u0644\u0648\u062D\u0629 \u0633\u0644\u0648\u0645 \u0645\u0639 \u0627\u0644\u0627\u0634\u062A\u0631\u0627\u0643\u0627\u062A \u0627\u0644\u0640 5 \u0627\u0644\u0645\u062E\u0635\u0635\u0629 \u0644\u0644\u0639\u0631\u0627\u0642.</p>
+                        <a id="liveUrl" href="#" target="_blank" class="open-panel-btn">
+                            <span class="material-symbols-rounded">open_in_new</span>
+                            <span>\u0627\u0644\u062F\u062E\u0648\u0644 \u0625\u0644\u0649 \u0644\u0648\u062D\u0629 SELOOM Panel</span>
+                        </a>
+                    </div>
+                </div>
             </form>
 
-            <pre id="output" class="terminal">\u25CF\u25CF\u25CF Standby - \u0628\u0627\u0646\u062A\u0638\u0627\u0631 \u0628\u062F\u0621 \u0627\u0644\u062A\u062B\u0628\u064A\u062A...
-            </pre>
-
-            <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #64748b; font-weight: 500;">
-                Customized & Maintained with \u2764\uFE0F by <b style="color: #38bdf8;">SELOOM</b> \u{1F1EE}\u{1F1F6} | All Rights Reserved
+            <!-- Console Log Output -->
+            <div class="terminal-wrapper">
+                <div class="terminal-bar">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                    <span class="term-title"><span class="material-symbols-rounded">terminal</span> \u0645\u062E\u0631\u062C\u0627\u062A \u0627\u0644\u062A\u062B\u0628\u064A\u062A \u0627\u0644\u0645\u0628\u0627\u0634\u0631\u0629 (Live Console)</span>
+                </div>
+                <pre id="output" class="terminal-screen" dir="ltr">\u25CF\u25CF\u25CF SELOOM Deployer v2.0 - \u062C\u0627\u0647\u0632 \u0648\u0628\u0627\u0646\u062A\u0638\u0627\u0631 \u0627\u0644\u062A\u0648\u0643\u0646...</pre>
             </div>
-        </div>
+
+            <!-- Footer -->
+            <footer class="card-footer">
+                <div class="footer-iraq-banner">
+                    <span>\u062A\u0645 \u0627\u0644\u062A\u0637\u0648\u064A\u0631 \u0648\u0627\u0644\u062A\u062E\u0635\u064A\u0635 \u0628\u062D\u0628 \u0628\u0648\u0627\u0633\u0637\u0629 \u0627\u0644\u0645\u0637\u0648\u0631 <b style="color: #00f0ff;">\u0633\u0644\u0648\u0645 (SELOOM)</b> \u{1F1EE}\u{1F1F6}</span>
+                </div>
+                <div class="footer-sub-links">
+                    <a href="https://t.me/freevpsiraq" target="_blank">\u0642\u0646\u0627\u0629 \u0627\u0644\u062A\u0644\u062C\u0631\u0627\u0645 @freevpsiraq</a>
+                    <span class="dot-sep">\u2022</span>
+                    <a href="https://t.me/seloom1" target="_blank">\u062D\u0633\u0627\u0628 \u0627\u0644\u0645\u0637\u0648\u0631 @seloom1</a>
+                    <span class="dot-sep">\u2022</span>
+                    <a href="https://github.com/Seloom1/SELOOM-Wizard" target="_blank">\u0645\u0633\u062A\u0648\u062F\u0639 GitHub</a>
+                </div>
+            </footer>
+        </main>
     </div>
 
     <script>
@@ -82703,8 +82912,7 @@ function elm(tag, props = {}, children = []) {
 <\/script>
 </body>
 
-</html>
-`;
+</html>`;
 
 // web/src/index.ts
 var index_default = {

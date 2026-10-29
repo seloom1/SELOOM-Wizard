@@ -1,147 +1,185 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SELOOM Wizard 🇮🇶 | 1-Click Deployer</title>
+    <title>SELOOM Deployer 🇮🇶 | منصة تثبيت ونشر خوادم سلوم</title>
     <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Tajawal:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=alt_route,check_circle,cloud_upload,content_copy,key,keyboard_arrow_down,open_in_new,visibility,visibility_off,bolt" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=alt_route,check_circle,cloud_upload,content_copy,key,keyboard_arrow_down,open_in_new,visibility,visibility_off,bolt,send,shield,download,verified,terminal,rocket_launch" />
     <link href="styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header-area">
-                <div class="card-header-group">
-                    <h3 class="header">
-                        <span class="material-symbols-rounded" style="color: #38bdf8; font-size: 2rem;">bolt</span>
-                        SELOOM Wizard
-                    </h3>
-                    <a href="https://github.com/Seloom1/SELOOM-Wizard" target="_blank" title="GitHub Repository">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24"
-                                fill="white">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                        </span>
-                    </a>
+    <div class="bg-glow top-left"></div>
+    <div class="bg-glow bottom-right"></div>
+
+    <div class="main-wrapper">
+        <!-- Top Navigation / Social Bar -->
+        <header class="top-bar">
+            <div class="brand-badge">
+                <span class="iraq-flag-icon">🇮🇶</span>
+                <span class="brand-text">SELOOM TECH</span>
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/freevpsiraq" target="_blank" class="social-pill tg-channel" title="قناة التلجرام">
+                    <span class="material-symbols-rounded">send</span>
+                    <span>قناة التلجرام: @freevpsiraq</span>
+                </a>
+                <a href="https://t.me/seloom1" target="_blank" class="social-pill tg-user" title="معرف التلجرام">
+                    <span class="material-symbols-rounded">verified</span>
+                    <span>المطور: @seloom1</span>
+                </a>
+                <a href="https://t.me/freevpsiraq/210" target="_blank" class="social-pill iq-app" title="تحميل تطبيق IQ Tunnel">
+                    <span class="material-symbols-rounded">download</span>
+                    <span>تطبيق IQ Tunnel</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Deployment Card -->
+        <main class="deploy-card">
+            <div class="hero-section">
+                <div class="hero-badge">
+                    <span class="material-symbols-rounded">rocket_launch</span>
+                    <span>نظام النشر السحابي التلقائي 2026</span>
                 </div>
-                <p class="subtitle" style="color: #38bdf8; font-weight: 600;">⚡ تثبيت ونشر لوحة سلوم في حسابك بنقرة واحدة 🇮🇶 ⚡</p>
-                <h4 id="user" style="display: none;"></h4>
-                <ol id="steps">
-                    <li>
-                        <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">سجل دخول</a> إلى حساب كلاودفلير مجاناً.
-                    </li>
-                    <li>
-                        اضغط على <a id="tokenTemplate" href="" target="_blank" rel="noopener noreferrer"><b>إنشاء التوكن (Create Token)</b></a>، ثم اضغط <b>Continue to summary</b> ثم <b>Create Token</b> وانسخ الرمز.
-                    </li>
-                    <li>الصق التوكن أدناه، اختر <b>Cloudflare Pages</b> واضغط <b>Install</b>.</li>
-                    <li>ستحصل مباشرة على رابط لوحتك الخاصة <b>SELOOM Panel</b> ومعلومات الدخول!</li>
-                </ol>
+                <h1 class="main-title">
+                    مثبت لوحات سلوم <span class="highlight-text">SELOOM</span> 🇮🇶
+                </h1>
+                <p class="hero-subtitle">
+                    نظام متطور لنشر لوحات البروكسي والاشتراكات السريعة على كلاودفلير مجاناً بنقرة واحدة مع 5 باقات مجهزة لشبكات العراق (زين، أودي، وآسيا سيل).
+                </p>
             </div>
 
-            <form id="deployForm" class="form">
-                <div id="apiTokenGroup" class="input-group">
-                    <span class="input-icon">
-                        <span class="material-symbols-rounded">
-                            key
-                        </span>
-                    </span>
-                    <input id="apiToken" name="apiToken" type="password" class="input-field"
-                        placeholder="Cloudflare API Token" required />
-                    <button id="togglePassword" type="button" class="input-after-icon">
-                        <span id="eyeIcon" class="material-symbols-rounded">
-                            visibility
-                        </span>
-                        <span id="eyeOffIcon" class="material-symbols-rounded hidden">
-                            visibility_off
-                        </span>
-                    </button>
-                </div>
-
-                <div class="input-group">
-                    <span class="material-symbols-rounded input-icon">
-                        alt_route
-                    </span>
-                    <select id="deployType" name="deployType" class="form-select">
-                        <option value="pages" selected>Cloudflare Pages (موصى به - فائق السرعة)</option>
-                        <option value="workers">Cloudflare Workers</option>
-                    </select>
-                    <span class="material-symbols-rounded input-after-icon">
-                        keyboard_arrow_down
-                    </span>
-                </div>
-
-                <button type="submit" class="btn-primary" style="background: linear-gradient(135deg, #0284c7, #0369a1); font-weight: 700;">
-                    <span class="material-symbols-rounded">
-                        cloud_upload
-                    </span>
-                    Install SELOOM Panel
-                </button>
-
-                <div id="privateUrlToast" class="toast-card hidden">
-                    <div class="toast-header">
-                        <div class="toast-title">
-                            <span class="material-symbols-rounded toast-success-icon">
-                                check_circle
-                            </span>
-                            SELOOM Wizard Private Link
-                        </div>
-                        <button id="closePrivateUrlToast" class="toast-close-btn">
-                            ✕
-                        </button>
-                    </div>
-                    <div class="toast-body">
-                        رابطك الخاص لإعادة التثبيت أو التحديث بنقرة واحدة:
-                        <button id="copyURL" type="button" class="btn-secondary">
-                            <span class="material-symbols-rounded">
-                                content_copy
-                            </span>
-                        </button>
+            <!-- Steps Progress Cards -->
+            <div id="steps" class="steps-grid">
+                <div class="step-box">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>حساب كلاودفلير</h4>
+                        <p>افتح <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener noreferrer">حسابك المجاني</a> في Cloudflare إذا لم يكن لديك حساب.</p>
                     </div>
                 </div>
-
-                <div id="deploymentToast" class="toast-card hidden">
-                    <div class="toast-header">
-                        <div class="toast-title">
-                            <span class="material-symbols-rounded toast-success-icon">
-                                check_circle
-                            </span>
-                            تم التثبيت والنشر بنجاح! 🇮🇶
-                        </div>
-                        <button id="closeDeploymentToast" class="toast-close-btn">
-                            ✕
-                        </button>
-                    </div>
-                    <div class="toast-body">
-                        افتح لوحة تحكمك الخاصة الآن:
-                        <a id="liveUrl" href="#" target="_blank" class="toast-link" style="color: #38bdf8; font-weight: 700;">
-                            <span class="material-symbols-rounded">
-                                open_in_new
-                            </span>
-                            دخول إلى SELOOM Panel
+                <div class="step-box highlight-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>إنشاء التوكن</h4>
+                        <p>اضغط الزر أدناه لإنشاء التوكن بالصلاحيات الجاهزة تلقائياً ثم اضغط <b>Create Token</b> وانسخ الرمز.</p>
+                        <a id="tokenTemplate" href="" target="_blank" rel="noopener noreferrer" class="token-direct-btn">
+                            <span class="material-symbols-rounded">key</span>
+                            <span>إنشاء التوكن بنقرة واحدة ⚡</span>
                         </a>
                     </div>
                 </div>
+                <div class="step-box">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>التثبيت الفوري</h4>
+                        <p>الصق رمز التوكن واضغط <b>تثبيت اللوحة</b> وستستلم لوحتك واشتراكاتك فوراً!</p>
+                    </div>
+                </div>
+            </div>
 
+            <h4 id="user" class="welcome-user-banner" style="display: none;"></h4>
+
+            <!-- Form -->
+            <form id="deployForm" class="deploy-form">
+                <div id="apiTokenGroup" class="input-container">
+                    <label class="input-label">رمز التوكن السحابي (Cloudflare API Token)</label>
+                    <div class="input-box">
+                        <span class="material-symbols-rounded field-icon">key</span>
+                        <input id="apiToken" name="apiToken" type="password" class="text-input"
+                            placeholder="الصق التوكن هنا (يبدأ بـ ...)" required dir="ltr" />
+                        <button id="togglePassword" type="button" class="toggle-eye-btn">
+                            <span id="eyeIcon" class="material-symbols-rounded">visibility</span>
+                            <span id="eyeOffIcon" class="material-symbols-rounded hidden">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label class="input-label">نوع الاستضافة (Deployment Target)</label>
+                    <div class="input-box">
+                        <span class="material-symbols-rounded field-icon">alt_route</span>
+                        <select id="deployType" name="deployType" class="select-input">
+                            <option value="pages" selected>Cloudflare Pages (موصى به لشبكات العراق - بدون حظر ⚡)</option>
+                            <option value="workers">Cloudflare Workers</option>
+                        </select>
+                        <span class="material-symbols-rounded dropdown-icon">keyboard_arrow_down</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-deploy-btn">
+                    <span class="material-symbols-rounded">cloud_upload</span>
+                    <span>بدء تثبيت ونشر لوحة سلوم الآن 🚀</span>
+                </button>
+
+                <!-- Private URL Toast -->
+                <div id="privateUrlToast" class="alert-card toast-private hidden">
+                    <div class="alert-header">
+                        <div class="alert-title">
+                            <span class="material-symbols-rounded">shield</span>
+                            رابطك الخاص للإدارة السريعة
+                        </div>
+                        <button id="closePrivateUrlToast" class="alert-close">✕</button>
+                    </div>
+                    <div class="alert-body">
+                        <span>احتفظ برابطك الخاص لإعادة التثبيت أو التحديث بضغطة زر:</span>
+                        <button id="copyURL" type="button" class="copy-pill-btn">
+                            <span class="material-symbols-rounded">content_copy</span>
+                            <span>نسخ الرابط الخاص</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Deployment Success Toast -->
+                <div id="deploymentToast" class="alert-card toast-success hidden">
+                    <div class="alert-header">
+                        <div class="alert-title">
+                            <span class="material-symbols-rounded">check_circle</span>
+                            تم نشر اللوحة بنجاح مبروك! 🇮🇶
+                        </div>
+                        <button id="closeDeploymentToast" class="alert-close">✕</button>
+                    </div>
+                    <div class="alert-body">
+                        <p>تم تثبيت وتفعيل لوحة سلوم مع الاشتراكات الـ 5 المخصصة للعراق.</p>
+                        <a id="liveUrl" href="#" target="_blank" class="open-panel-btn">
+                            <span class="material-symbols-rounded">open_in_new</span>
+                            <span>الدخول إلى لوحة SELOOM Panel</span>
+                        </a>
+                    </div>
+                </div>
             </form>
 
-            <pre id="output" class="terminal">●●● Standby - بانتظار بدء التثبيت...
-            </pre>
-
-            <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #64748b; font-weight: 500;">
-                Customized & Maintained with ❤️ by <b style="color: #38bdf8;">SELOOM</b> 🇮🇶 | All Rights Reserved
+            <!-- Console Log Output -->
+            <div class="terminal-wrapper">
+                <div class="terminal-bar">
+                    <span class="term-dot red"></span>
+                    <span class="term-dot yellow"></span>
+                    <span class="term-dot green"></span>
+                    <span class="term-title"><span class="material-symbols-rounded">terminal</span> مخرجات التثبيت المباشرة (Live Console)</span>
+                </div>
+                <pre id="output" class="terminal-screen" dir="ltr">●●● SELOOM Deployer v2.0 - جاهز وبانتظار التوكن...</pre>
             </div>
-        </div>
+
+            <!-- Footer -->
+            <footer class="card-footer">
+                <div class="footer-iraq-banner">
+                    <span>تم التطوير والتخصيص بحب بواسطة المطور <b style="color: #00f0ff;">سلوم (SELOOM)</b> 🇮🇶</span>
+                </div>
+                <div class="footer-sub-links">
+                    <a href="https://t.me/freevpsiraq" target="_blank">قناة التلجرام @freevpsiraq</a>
+                    <span class="dot-sep">•</span>
+                    <a href="https://t.me/seloom1" target="_blank">حساب المطور @seloom1</a>
+                    <span class="dot-sep">•</span>
+                    <a href="https://github.com/Seloom1/SELOOM-Wizard" target="_blank">مستودع GitHub</a>
+                </div>
+            </footer>
+        </main>
     </div>
 
     <script src="app.js" defer></script>
