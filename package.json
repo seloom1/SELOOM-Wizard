@@ -1,0 +1,25 @@
+{
+    "name": "seloom-wizard",
+    "version": "1.0.0",
+    "description": "SELOOM Wizard - Fast 1-Click Cloudflare Proxy Panel Deployer",
+    "main": "public/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Seloom1/SELOOM-Wizard.git"
+    },
+    "author": "Seloom1",
+    "license": "GPL-3.0",
+    "private": true,
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/Seloom1/SELOOM-Wizard/issues"
+    },
+    "homepage": "https://github.com/Seloom1/SELOOM-Wizard#readme",
+    "devDependencies": {
+        "@cloudflare/workers-types": "^5.20260716.1",
+        "typescript": "^7.0.2"
+    },
+    "dependencies": {
+        "cloudflare": "^7.0.0"
+    }
+}
