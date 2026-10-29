@@ -8,30 +8,31 @@
 ![Author](https://img.shields.io/badge/Author-Seloom-38bdf8?style=for-the-badge)
 
 <p align="center">
-  <b>أداة التثبيت والنشر السريع بنقرة واحدة للوحة سلوم (SELOOM Panel) عبر حساب كلاودفلير بكل سهولة</b><br>
+  <b>الموقع السحابي والأداة الذكية لتثبيت ونشر لوحة سلوم (SELOOM Panel) بنقرة واحدة عبر حساب كلاودفلير بكل سهولة</b><br>
   <b>Automated 1-Click Fast Deployer for SELOOM Panel via Cloudflare API</b>
 </p>
 
-[✨ لوحة سلوم الأصلية (SELOOM Panel)](https://github.com/Seloom1/SELOOM-Worker-Panel) • [📖 طريقة التثبيت](#-طريقة-الاستخدام) • [🚀 النشر عبر الويب](#-النسخة-السحابية-web-edition)
+### 🌐 [افتح موقع المعالج المباشر الآن: https://seloom-wizard.pages.dev](https://seloom-wizard.pages.dev) 🌐
 
 ---
 </div>
 
 ## 🌟 مميزات معالج سلوم (Features)
 
-1. ⚡ **تثبيت سريع بنقرة واحدة (1-Click Install)**: لا حاجة لخبرة تقنية أو إعداد بيئة برمجية؛ أدخل التوكن واضغط تثبيت.
-2. 🚀 **دعم كامل لـ Cloudflare Pages**: ينشر لوحة `SELOOM Panel` كـ Pages Project لتفادي الحظر تماماً وضمان عمل البروكسي بسلاسة.
+1. ⚡ **تثبيت فوري بنقرة واحدة (1-Click Install)**: افتح الرابط المباشر، الصق التوكن، واضغط تثبيت.
+2. 🚀 **يعمل عبر Cloudflare Pages**: ينشر لوحة `SELOOM Panel` كـ Pages Project لتفادي الحظر تماماً وضمان عمل البروكسي بسلاسة.
 3. 🇮🇶 **إعدادات جاهزة ومُحسّنة للعراق**: تأتي اللوحة المنشورة محقونة بالآي بي النظيف المناسب لشبكات العراق (زين وأودي) لتعمل بالرصيد الصفري تلقائياً.
-4. 🔒 **أمان وخصوصية تامة 100%**: الأداة مفتوحة المصدر بالكامل، ويتم النشر مباشرة من جهازك أو المتصفح إلى حسابك في كلاودفلير دون تخزين أي مفاتيح في أي خوادم خارجية.
+4. 🔒 **أمان وخصوصية تامة 100%**: الأداة مفتوحة المصدر بالكامل، ويتم النشر مباشرة إلى حسابك في كلاودفلير دون تخزين أي مفاتيح في أي خوادم خارجية.
 5. 💻 **نسخة ويب ونسخة سطر أوامر (CLI)**: يمكنك استخدام واجهة الويب أو تنفيذ أمر واحد عبر `PowerShell` أو `Termux / Linux`.
 
 ---
 
-## 🌐 النسخة السحابية (Web Edition)
+## 🌐 النسخة السحابية المباشرة (Web Edition)
 
-عند استضافة المعالج على حسابك أو استخدام الرابط المباشر، يمكنك فتح صفحة الويب وإدخال التوكن مباشرة:
+افتح الموقع في أي متصفح على الحاسوب أو الهاتف:
+👉 **[https://seloom-wizard.pages.dev](https://seloom-wizard.pages.dev)**
 
-1. اضغط على رابط **إنشاء التوكن** الموجود داخل الصفحة (تم ضبط الصلاحيات مسبقاً).
+1. اضغط على رابط **إنشاء التوكن** الموجود داخل الصفحة.
 2. انسخ الـ `Token` والصقه في خانة التوكن.
 3. اختر نوع النشر: **Cloudflare Pages** (الخيار الموصى به).
 4. اضغط **Install SELOOM Panel**.
@@ -43,30 +44,12 @@
 
 ### لنظام ويندوز (Windows PowerShell):
 ```powershell
-irm https://raw.githubusercontent.com/Seloom1/SELOOM-Wizard/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/seloom1/SELOOM-Wizard/main/install.ps1 | iex
 ```
 
 ### لأنظمة لينكس، أندرويد (Termux)، وماك (macOS):
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Seloom1/SELOOM-Wizard/main/install.sh)
-```
-
----
-
-## 🛠️ نشر الـ Wizard بنفسك كـ Worker مستقل مجاناً
-
-إذا أردت استضافة المعالج كصفحة ويب خاصة بك ومشاركتها مع أصدقائك أو متابعيك:
-
-```bash
-# استنساخ المستودع
-git clone https://github.com/Seloom1/SELOOM-Wizard.git
-cd SELOOM-Wizard
-
-# تثبيت الحزم
-npm install
-
-# نشر المعالج على حساب كلاودفلير الخاص بك مجاناً
-npx wrangler deploy
+bash <(curl -fsSL https://raw.githubusercontent.com/seloom1/SELOOM-Wizard/main/install.sh)
 ```
 
 ---
@@ -74,5 +57,5 @@ npx wrangler deploy
 ## 📄 الحقوق والترخيص (License)
 
 - تم بناء وتخصيص المشروع تحت رخصة [GNU General Public License v3.0](LICENSE).
-- تم التطوير والإعداد بواسطة **[Seloom (Seloom1)](https://github.com/Seloom1)**.
+- تم التطوير والإعداد بواسطة **[Seloom (Seloom1)](https://github.com/seloom1)**.
 - تحية تقدير للمشروع الأصلي والمجتمع التقني المفتوح المصدر.
